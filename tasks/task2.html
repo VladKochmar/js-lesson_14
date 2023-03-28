@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ukr">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="../css/style.css">
+   <title>Завдання 2</title>
+</head>
+
+<body>
+   <main class="page">
+      <section class="block">
+         <div class="block__container">
+            <h1 class="block__title">Додаткове завдання 2</h1>
+            <div class="block__body">
+               <a href="../index.html" class="block__link">Повернутися до index.html</a>
+            </div>
+         </div>
+      </section>
+   </main>
+   <script>
+
+      function getShiftedYear({ month, year }, N) {
+         const monthSum = month + N
+
+         if (monthSum % 12 === 0)
+            year += (Math.floor(monthSum / 12) - 1)
+         else if (monthSum > 12)
+            year += Math.floor(monthSum / 12)
+
+         return year
+      }
+
+      const myDate = {
+         day: 17,
+         month: 9,
+         year: 2023,
+      }
+
+      const N = parseInt(prompt('Введіть число'))
+      const shiftedYear = getShiftedYear(myDate, N)
+
+      document.write(`<div class="text">Через ${N} місяців буде ${shiftedYear} рік</div>`)
+   </script>
+</body>
+
+</html>
